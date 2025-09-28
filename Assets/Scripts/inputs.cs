@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TestScript : MonoBehaviour
+public class inputs : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,5 +12,12 @@ public class TestScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void resume()// unpasues the game 
+    {
+
+        Time.timeScale = 1;
+        Debug.Log("pasued");
     }
 }

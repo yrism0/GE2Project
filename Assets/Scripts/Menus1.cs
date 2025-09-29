@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class Menus1 : MonoBehaviour
 {
+    public GameObject Hmenu;
+    public GameObject Pmenu;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,6 +39,21 @@ public class Menus1 : MonoBehaviour
     {
         SceneManager.LoadScene("help menu");// loads the game
         Debug.Log("help LOADED");
+
+    }
+    public void Back()
+    {
+        Hmenu.SetActive(false);
+        Debug.Log("help closed");
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+    }
+    public void starthelpGAME()
+    {
+        //Time.timeScale = 1;
+        Hmenu.SetActive(true);
+        //Pmenu.SetActive(false);
+        Debug.Log("help");
 
     }
 }

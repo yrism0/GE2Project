@@ -32,7 +32,12 @@ public class raycast : MonoBehaviour
             {
                 isDoor = false;
             }
-           
+
+            if (hit.collider.CompareTag("Z"))
+            {
+                
+            }
+
         }
        
     }

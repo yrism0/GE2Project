@@ -39,7 +39,15 @@ public class inputs : MonoBehaviour
             }
           
         }
-        
+
+        if (open == false && internalDistance < 5 && raycast.isDoor == true)
+        {
+            if (Input.GetMouseButtonDown(0)) 
+            {
+                
+            }
+
+        }
     }
 
 

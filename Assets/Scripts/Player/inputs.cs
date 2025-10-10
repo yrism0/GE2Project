@@ -8,6 +8,7 @@ public class inputs : MonoBehaviour
 
     // raycst 
     [SerializeField] float internalDistance;
+    [SerializeField] float Ponitscheckup;
     [SerializeField] bool open = false;
     [SerializeField] GameObject stuff;
 
@@ -31,20 +32,24 @@ public class inputs : MonoBehaviour
         }
 
         internalDistance = raycast.DisFromTar;
-        if (open == false && internalDistance < 5 && raycast.isDoor == true)
+        Ponitscheckup = pointmanager.points;
+        if (open == false && internalDistance < 5 && raycast.isDoor == true && Ponitscheckup >= 100)
         {
             if (Input.GetKeyDown("e"))
             {
+                Debug.Log("open");
+                Ponitscheckup -= 100;
                 Destroy(stuff);
             }
           
         }
 
-        if (open == false && internalDistance < 5 && raycast.isDoor == true)
+        if (  internalDistance < 10 && raycast.isZ == true)
         {
             if (Input.GetMouseButtonDown(0)) 
             {
-                
+                Debug.Log("Zhit");
+                Zstats.health -= 25;
             }
 
         }

@@ -8,7 +8,8 @@ public class raycast : MonoBehaviour
     public static float DisFromTar;
     [SerializeField] private float ToTar;
     public static bool isDoor = false;
-   
+    public static bool isZ = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,7 +36,11 @@ public class raycast : MonoBehaviour
 
             if (hit.collider.CompareTag("Z"))
             {
-                
+               isZ = true;
+            }
+            else
+            {
+                isZ = false;
             }
 
         }

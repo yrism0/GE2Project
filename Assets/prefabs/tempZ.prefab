@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7544131095568988629}
   - component: {fileID: 8029917743460897947}
   - component: {fileID: 5460150246928372100}
+  - component: {fileID: 6028170137195106354}
   m_Layer: 7
   m_Name: tempZ
   m_TagString: Z
@@ -175,3 +176,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &6028170137195106354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400374006549193556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5233782e86aea045b350067aede525f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Z: {fileID: 4400374006549193556}

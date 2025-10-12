@@ -8,6 +8,9 @@ public class raycast : MonoBehaviour
     public static float DisFromTar;
     [SerializeField] private float ToTar;
     public static bool isDoor = false;
+    public static bool isDoor2 = false;
+    public static bool isDoor3 = false;
+    public static bool isDoor4 = false;
     public static bool isZ = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,6 +28,7 @@ public class raycast : MonoBehaviour
         {
             ToTar = hit.distance;
             DisFromTar = hit.distance;
+            //checks for Door1
             if (hit.collider.CompareTag("door"))
             {
                 isDoor = true;
@@ -33,7 +37,38 @@ public class raycast : MonoBehaviour
             {
                 isDoor = false;
             }
+            //checks for door2
+            if (hit.collider.CompareTag("door2"))
+            {
+                isDoor2 = true;
+            }
+            else
+            {
+                isDoor2 = false;
+            }
+            //checks for door3
+            if (hit.collider.CompareTag("door3"))
+            {
+                isDoor3 = true;
+            }
+            else
+            {
+                isDoor3 = false;
+            }
+            //checks for door4
+            if (hit.collider.CompareTag("door4"))
+            {
+                isDoor4 = true;
+            }
+            else
+            {
+                isDoor4 = false;
+            }
 
+
+
+
+            // checks for zombies 
             if (hit.collider.CompareTag("Z"))
             {
                isZ = true;

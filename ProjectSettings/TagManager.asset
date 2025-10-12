@@ -7,6 +7,11 @@ TagManager:
   - CinemachineTarget
   - Z
   - door
+  - door2
+  - door3
+  - door4
+  - door5
+  - door6
   layers:
   - Default
   - TransparentFX
@@ -16,7 +21,7 @@ TagManager:
   - UI
   - player
   - z
-  - 
+  - doors
   - 
   - 
   - 

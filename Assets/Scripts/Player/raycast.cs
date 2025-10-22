@@ -11,6 +11,8 @@ public class raycast : MonoBehaviour
     public static bool isDoor2 = false;
     public static bool isDoor3 = false;
     public static bool isDoor4 = false;
+    public static bool isDoor5 = false;
+    public static bool isDoor6 = false;
     public static bool isZ = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -63,6 +65,24 @@ public class raycast : MonoBehaviour
             else
             {
                 isDoor4 = false;
+            }
+            //checks door 5
+            if (hit.collider.CompareTag("door5"))
+            {
+                isDoor5 = true;
+            }
+            else
+            {
+                isDoor5 = false;
+            }
+            //checks door 6
+            if (hit.collider.CompareTag("door6"))
+            {
+                isDoor6 = true;
+            }
+            else
+            {
+                isDoor6 = false;
             }
 
 

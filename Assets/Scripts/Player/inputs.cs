@@ -14,6 +14,8 @@ public class inputs : MonoBehaviour
     [SerializeField] GameObject D2;
     [SerializeField] GameObject D3;
     [SerializeField] GameObject D4;
+    [SerializeField] GameObject D5;
+    [SerializeField] GameObject D6;
 
 
 
@@ -76,6 +78,28 @@ public class inputs : MonoBehaviour
                 Debug.Log("open4");
                 Ponitscheckup -= 0;
                 Destroy(D4);
+            }
+
+        }
+
+        if (open == false && internalDistance < 5 && raycast.isDoor5 == true && Ponitscheckup >= 0)
+        {
+            if (Input.GetKeyDown("e"))
+            {
+                Debug.Log("open5");
+                Ponitscheckup -= 0;
+                Destroy(D5);
+            }
+
+        }
+
+        if (open == false && internalDistance < 5 && raycast.isDoor6 == true && Ponitscheckup >= 0)
+        {
+            if (Input.GetKeyDown("e"))
+            {
+                Debug.Log("open6");
+                Ponitscheckup -= 0;
+                Destroy(D6);
             }
 
         }

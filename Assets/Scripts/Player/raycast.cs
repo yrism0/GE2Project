@@ -104,7 +104,7 @@ public class raycast : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     Debug.Log("Zhit");
-                    hit.collider.gameObject.GetComponent<Zstats>()?.TakeDamage(10);
+                    hit.collider.gameObject.GetComponent<Zstats>()?.TakeDamage(50);
                 }
 
             }

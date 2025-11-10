@@ -92,10 +92,21 @@ public class raycast : MonoBehaviour
             if (hit.collider.CompareTag("Z"))
             {
                isZ = true;
+               
             }
             else
             {
                 isZ = false;
+            }
+
+            if (DisFromTar < 10 && raycast.isZ == true)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Debug.Log("Zhit");
+                    hit.collider.gameObject.GetComponent<Zstats>()?.TakeDamage(10);
+                }
+
             }
 
         }

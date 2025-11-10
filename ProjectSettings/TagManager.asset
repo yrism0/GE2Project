@@ -12,6 +12,7 @@ TagManager:
   - door4
   - door5
   - door6
+  - Zdoor
   layers:
   - Default
   - TransparentFX

@@ -111,7 +111,7 @@ public class inputs : MonoBehaviour
             if (Input.GetMouseButtonDown(0)) 
             {
                 Debug.Log("Zhit");
-                Zstats.health -= 25;
+                //Zstats.health -= 25;
             }
 
         }

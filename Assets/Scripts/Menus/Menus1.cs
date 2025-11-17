@@ -3,8 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class Menus1 : MonoBehaviour
 {
-    public GameObject Hmenu;
-    public GameObject Pmenu;
+    [Header("Main Menu")]
+    public GameObject mainMenuScreen;
+
+
+    [Header("Help Menu")]
+    public GameObject helpScreen;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,43 +23,28 @@ public class Menus1 : MonoBehaviour
         
     }
 
-    public void startgame()
+    public void StartGame()
     {
         SceneManager.LoadScene("level");// loads the game
         Debug.Log("GAME LOADED");
 
     }
-    public void exitgame()
+    public void ExitGame()
     {
         Application.Quit();//exits the game
         Debug.Log("GAME CLOSED");
     }
-    public void Bmain()
+    
+    public void ShowHelpMenu()
     {
-        SceneManager.LoadScene("main menu");// loads the main menu
-        Debug.Log("MENU LOADED");
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
+        helpScreen.SetActive(true);
+        mainMenuScreen.SetActive(false);
     }
-    public void starthelp()
-    {
-        SceneManager.LoadScene("help menu");// loads the game
-        Debug.Log("help LOADED");
 
-    }
-    public void Back()
+    public void HideHelpMenu()
     {
-        Hmenu.SetActive(false);
-        Debug.Log("help closed");
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
+        helpScreen.SetActive(false);
+        mainMenuScreen.SetActive(true);
     }
-    public void starthelpGAME()
-    {
-        //Time.timeScale = 1;
-        Hmenu.SetActive(true);
-        //Pmenu.SetActive(false);
-        Debug.Log("help");
-
-    }
+    
 }

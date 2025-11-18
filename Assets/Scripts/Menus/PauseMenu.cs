@@ -27,7 +27,11 @@ public class PauseMenu : MonoBehaviour
         {
             if(isPaused == false)
             {
-                PauseGame();
+                PauseGame();                
+            }
+            else if (isPaused == true)
+            {
+                return;
             }
             else
             {
@@ -45,6 +49,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void ResumeGame()
@@ -54,6 +60,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void GoToMainMenu()
@@ -62,6 +70,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene("MainMenu");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void ShowHelpMenu()
@@ -69,6 +79,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         helpMenu.SetActive(true);
         playerHUD.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void HideHelpMenu()
@@ -76,6 +88,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         helpMenu.SetActive(false);
         playerHUD.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void pauseFailsafe()
@@ -87,5 +101,8 @@ public class PauseMenu : MonoBehaviour
         helpOpened = false;
         Time.timeScale = 1f;
         playerHUD.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 }

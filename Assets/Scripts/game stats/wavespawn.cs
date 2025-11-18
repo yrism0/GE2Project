@@ -3,7 +3,7 @@ using UnityEngine;
 public class wavespawn : MonoBehaviour
 {
 
-    [SerializeField] private Transform[] spwaners;
+    [SerializeField] private Transform[] spawners;
     [SerializeField] private GameObject zombies;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,13 +16,13 @@ public class wavespawn : MonoBehaviour
     {
         if (Input.GetKeyDown("n"))
         {
-            spwanzombie();
+            spawnzombie();
         }
     }
 
-    private void spwanzombie()
+    private void spawnzombie()
     {
-        int randomInt = Random.Range(1, spwaners.Length);
+        int randomInt = Random.Range(1, spawners.Length);
         Debug.Log(randomInt);
     }
 }

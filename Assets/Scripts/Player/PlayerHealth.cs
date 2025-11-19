@@ -36,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateHealthUI()
     {
-        Debug.Log(health);
+        //Debug.Log(health);
         healthBar.value = health;
 
 

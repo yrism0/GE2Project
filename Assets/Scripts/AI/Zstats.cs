@@ -4,31 +4,33 @@ public class Zstats : MonoBehaviour
 {
 
     public GameObject Z;
-    public  float  health = 0;
-    public static float damage = 0;
+    public  float  health = 50f;
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        health = 50;
-        damage = 50;
+           
         
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        if (health <= 0)
+               
+    }
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+        if (health <= 0f)
         {
-            Debug.Log("Zkilled");
-            pointmanager.points += 100;
-            Destroy(this.gameObject);
+            Die();
         }
     }
-    public void TakeDamage(float damage)
+
+    void Die()
     {
-        health -= damage;
-        Debug.Log("Zhit");
+        pointmanager.points += 100;
+        Destroy(gameObject);
     }
 
    

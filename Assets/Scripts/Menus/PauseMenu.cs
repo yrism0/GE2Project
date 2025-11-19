@@ -1,4 +1,3 @@
-using StarterAssets;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -110,7 +109,8 @@ public class PauseMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        FirstPersonController.instance.RotationSpeed = 1f;
+        PlayerLook.Instance.xSensitivity = 30f;
+        PlayerLook.Instance.ySensitivity = 30f;
         
     }
 
@@ -118,6 +118,7 @@ public class PauseMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        FirstPersonController.instance.RotationSpeed = 0f;
+        PlayerLook.Instance.xSensitivity = 0f;
+        PlayerLook.Instance.ySensitivity = 0f;
     }
 }

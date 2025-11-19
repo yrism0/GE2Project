@@ -13,6 +13,7 @@ TagManager:
   - door5
   - door6
   - Zdoor
+  - Interactable
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - player
   - z
   - doors
-  - 
+  - Interactable
   - 
   - 
   - 

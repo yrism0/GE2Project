@@ -95,16 +95,7 @@ public class inputs : MonoBehaviour
         }
 
 
-        // for the gun gives range and tells it for fire when mouse is clicked 
-        if (  internalDistance < 10 && raycast.isZ == true)
-        {
-            if (Input.GetMouseButtonDown(0)) 
-            {
-                Debug.Log("Zhit");
-                //Zstats.health -= 25;
-            }
-
-        }
+       
     }
 
 

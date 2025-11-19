@@ -22,7 +22,9 @@ public class wavespawn : MonoBehaviour
 
     private void spawnzombie()
     {
-        int randomInt = Random.Range(1, spawners.Length);
+        int randomInt = Random.Range(0, spawners.Length);
         Debug.Log(randomInt);
+        Transform randomspwaner = spawners[randomInt];
+        Instantiate(zombies, spawners[randomInt].position, spawners[randomInt].rotation);
     }
 }

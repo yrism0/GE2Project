@@ -11,6 +11,8 @@ namespace StarterAssets
 #endif
 	public class FirstPersonController : MonoBehaviour
 	{
+		public static FirstPersonController instance;
+
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 8.0f;
@@ -88,6 +90,8 @@ namespace StarterAssets
 
 		private void Awake()
 		{
+			instance = this;
+
 			// get a reference to our main camera
 			if (_mainCamera == null)
 			{

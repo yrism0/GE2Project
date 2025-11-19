@@ -2603,9 +2603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2272712cf96a3a6449be5f1e764e56f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spwaners:
-  - {fileID: 1488926910}
-  - {fileID: 1256648784}
+  spawners: []
   zombies: {fileID: 0}
 --- !u!4 &491452944
 Transform:
@@ -5618,7 +5616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2272712cf96a3a6449be5f1e764e56f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spwaners: []
+  spawners: []
   zombies: {fileID: 0}
 --- !u!1 &1022685758
 GameObject:

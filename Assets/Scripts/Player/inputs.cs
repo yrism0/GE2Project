@@ -2,11 +2,7 @@ using UnityEngine;
 
 public class inputs : MonoBehaviour
 {
-    //menus
-    public GameObject Pmenu;
-    public GameObject Hud;
-
-    // raycst 
+     // raycst 
     [SerializeField] float internalDistance;
     [SerializeField] float Ponitscheckup;
     [SerializeField] bool open = false;

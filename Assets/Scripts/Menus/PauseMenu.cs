@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,17 +28,18 @@ public class PauseMenu : MonoBehaviour
         {
             if(isPaused == false)
             {
-                PauseGame();                
+                PauseGame();
+                playerHUD.SetActive(false);
             }
-            else if (isPaused == true)
+            /*else if (isPaused == true)
             {
                 return;
-            }
+            }*/
             else
             {
                 if (helpOpened == false)
                 {
-                    pauseFailsafe();
+                    pauseFailsafe();                    
                 }
             }
         }
@@ -49,8 +51,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        ShowMouse();
     }
 
     public void ResumeGame()
@@ -60,8 +61,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        HideMouse();
+        playerHUD.SetActive(true);
     }
 
     public void GoToMainMenu()
@@ -70,8 +71,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene("MainMenu");
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        ShowMouse();
     }
 
     public void ShowHelpMenu()
@@ -79,8 +79,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         helpMenu.SetActive(true);
         playerHUD.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        ShowMouse();
+        playerHUD.SetActive(false);
     }
 
     public void HideHelpMenu()
@@ -88,8 +88,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         helpMenu.SetActive(false);
         playerHUD.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        ShowMouse();
+        playerHUD.SetActive(false);
     }
 
     public void pauseFailsafe()
@@ -101,8 +101,23 @@ public class PauseMenu : MonoBehaviour
         helpOpened = false;
         Time.timeScale = 1f;
         playerHUD.SetActive(true);
+        HideMouse();
+        playerHUD.SetActive(true);
+
+    }
+
+    private void HideMouse()
+    {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        FirstPersonController.instance.RotationSpeed = 1f;
+        
+    }
 
+    private void ShowMouse()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        FirstPersonController.instance.RotationSpeed = 0f;
     }
 }

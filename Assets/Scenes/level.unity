@@ -9482,7 +9482,7 @@ MonoBehaviour:
   fpsCam: {fileID: 1412826288}
   mask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1280
 --- !u!1 &1360186408
 GameObject:
   m_ObjectHideFlags: 0
@@ -10403,7 +10403,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 1079
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -10855,6 +10855,7 @@ GameObject:
   - component: {fileID: 1518841664}
   - component: {fileID: 1518841663}
   - component: {fileID: 1518841670}
+  - component: {fileID: 1518841671}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -11013,6 +11014,27 @@ MonoBehaviour:
   maxHealth: 100
   chipSpeed: 2
   healthBar: {fileID: 1955635551}
+--- !u!114 &1518841671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518841662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8863c6e92447144ca952716079a2e0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  internalDistance: 0
+  pointsCheckup: 0
+  open: 0
+  D1: {fileID: 575399326}
+  D2: {fileID: 1651675158}
+  D3: {fileID: 416046149}
+  D4: {fileID: 1263851546}
+  D5: {fileID: 534539516}
+  D6: {fileID: 1812141477}
 --- !u!1 &1535221206
 GameObject:
   m_ObjectHideFlags: 0

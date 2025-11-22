@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8029917743460897947}
   - component: {fileID: 5460150246928372100}
   - component: {fileID: 6028170137195106354}
+  - component: {fileID: 7070833138506862137}
   m_Layer: 7
   m_Name: tempZ
   m_TagString: Z
@@ -190,3 +191,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Z: {fileID: 0}
   health: 50
+--- !u!114 &7070833138506862137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400374006549193556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dcee2d6aab9714192cfcb798c92487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  playerhealth: {fileID: 2432499347331993826, guid: 55ed9e23edec082418bd1cccbfd32247, type: 3}

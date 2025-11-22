@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     private float health;
     public float maxHealth = 100f;
     public float chipSpeed = 2f;
+    
 
     public Slider healthBar;
     
@@ -41,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
 
 
     }
-
+  
     public void TakeDamage(float damage)
     {
         health -= damage;

@@ -2,16 +2,25 @@ using UnityEngine;
 
 public class inputs : MonoBehaviour
 {
-     // raycst 
+    // raycst 
+    [Header("Raycast")]
     [SerializeField] float internalDistance;
     [SerializeField] float pointsCheckup;
-    [SerializeField] bool open = false;
+    
+
+    [Header("Doors")]
+    [SerializeField] bool doorOpen = false;
+
     [SerializeField] GameObject D1;
     [SerializeField] GameObject D2;
     [SerializeField] GameObject D3;
     [SerializeField] GameObject D4;
     [SerializeField] GameObject D5;
     [SerializeField] GameObject D6;
+
+    [Header("Stores")]
+
+    public GameObject Store1;
 
 
 
@@ -28,7 +37,7 @@ public class inputs : MonoBehaviour
      
         internalDistance = raycast.DisFromTar;
         pointsCheckup = pointmanager.points;
-        if (open == false && internalDistance < 5 && raycast.isDoor == true && pointsCheckup >= 0)
+        if (doorOpen == false && internalDistance < 5 && raycast.isDoor == true && pointsCheckup >= 0)
         {
             if (Input.GetKeyDown("e"))
             {
@@ -39,7 +48,7 @@ public class inputs : MonoBehaviour
           
         }
 
-        if (open == false && internalDistance < 5 && raycast.isDoor2 == true && pointsCheckup >= 0)
+        if (doorOpen == false && internalDistance < 5 && raycast.isDoor2 == true && pointsCheckup >= 0)
         {
             if (Input.GetKeyDown("e"))
             {
@@ -50,7 +59,7 @@ public class inputs : MonoBehaviour
 
         }
 
-        if (open == false && internalDistance < 5 && raycast.isDoor3 == true && pointsCheckup >= 0)
+        if (doorOpen == false && internalDistance < 5 && raycast.isDoor3 == true && pointsCheckup >= 0)
         {
             if (Input.GetKeyDown("e"))
             {
@@ -61,7 +70,7 @@ public class inputs : MonoBehaviour
 
         }
         
-        if (open == false && internalDistance < 5 && raycast.isDoor4 == true && pointsCheckup >= 0)
+        if (doorOpen == false && internalDistance < 5 && raycast.isDoor4 == true && pointsCheckup >= 0)
         {
             if (Input.GetKeyDown("e"))
             {
@@ -72,7 +81,7 @@ public class inputs : MonoBehaviour
 
         }
 
-        if (open == false && internalDistance < 5 && raycast.isDoor5 == true && pointsCheckup >= 0)
+        if (doorOpen == false && internalDistance < 5 && raycast.isDoor5 == true && pointsCheckup >= 0)
         {
             if (Input.GetKeyDown("e"))
             {
@@ -83,7 +92,7 @@ public class inputs : MonoBehaviour
 
         }
 
-        if (open == false && internalDistance < 5 && raycast.isDoor6 == true && pointsCheckup >= 0)
+        if (doorOpen == false && internalDistance < 5 && raycast.isDoor6 == true && pointsCheckup >= 0)
         {
             if (Input.GetKeyDown("e"))
             {
@@ -92,11 +101,13 @@ public class inputs : MonoBehaviour
                 Destroy(D6);
             }
 
-        }
+        }      
 
 
        
     }
+
+    
 
 
     

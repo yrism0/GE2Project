@@ -7,13 +7,18 @@ public class raycast : MonoBehaviour
     public GameObject cam;
     public static float DisFromTar;
     [SerializeField] private float ToTar;
+
+    [Header("Door")]
     public static bool isDoor = false;
     public static bool isDoor2 = false;
     public static bool isDoor3 = false;
     public static bool isDoor4 = false;
     public static bool isDoor5 = false;
     public static bool isDoor6 = false;
-    public static bool isZ = false;
+
+    [Header("Interactables")]
+    [SerializeField] LayerMask interMask;
+    public static bool isInteractable = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -85,30 +90,14 @@ public class raycast : MonoBehaviour
                 isDoor6 = false;
             }
 
-
-
-
-            // checks for zombies 
-            if (hit.collider.CompareTag("Z"))
+            if (hit.transform.gameObject.layer == interMask) 
             {
-               isZ = true;
-               
+                isInteractable = true;
             }
             else
             {
-                isZ = false;
+                return;
             }
-
-            if (DisFromTar < 10 && raycast.isZ == true)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    //Debug.Log("Zhit");
-                    //hit.collider.gameObject.GetComponent<Zstats>()?.TakeDamage(50);
-                }
-
-            }
-
         }
        
     }

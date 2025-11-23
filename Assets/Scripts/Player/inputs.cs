@@ -36,7 +36,7 @@ public class inputs : MonoBehaviour
     {
      
         internalDistance = raycast.DisFromTar;
-        pointsCheckup = pointmanager.points;
+        pointsCheckup = PointManager.points;
         if (doorOpen == false && internalDistance < 5 && raycast.isDoor == true && pointsCheckup >= 0)
         {
             if (Input.GetKeyDown("e"))

@@ -29,7 +29,7 @@ public class Zstats : MonoBehaviour
 
     void Die()
     {
-        pointmanager.points += 100;
+        PointManager.instance.AddPoints();
         Destroy(gameObject);
     }
 

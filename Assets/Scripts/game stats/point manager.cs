@@ -1,11 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class pointmanager : MonoBehaviour
+public class PointManager : MonoBehaviour
 {
+
+    public static PointManager instance;
     public static int points; // store players points
 
     public Text pointText; // display points on UI
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,9 +22,10 @@ public class pointmanager : MonoBehaviour
 
     }
     
-    public void AddPoints(int points) // adding points and updating UI
+    public void AddPoints() // adding points and updating UI
     {
-        points += points;
+        
+        points += 100;
         UpdatePointsUI();
     }
 

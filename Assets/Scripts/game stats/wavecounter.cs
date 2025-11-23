@@ -1,10 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class wavecounter : MonoBehaviour
+public class WaveCounter : MonoBehaviour
 {
+
+    public static WaveCounter instance;
+
     public Text wavecountdisplay;
     public static int wavecount;
-   
+
+    public static int finalWaveCount; // For use in End results UI
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,8 +31,8 @@ public class wavecounter : MonoBehaviour
         if (Input.GetKeyDown("m"))
         {
             Debug.Log("wave+1");
-            wavecount = wavecount+1;
-           
+            wavecount++;
+            finalWaveCount = wavecount;
 
             foreach (var gameObj in GameObject.FindGameObjectsWithTag("Z"))
             {

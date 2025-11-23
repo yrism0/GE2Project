@@ -1,18 +1,34 @@
 using System.ComponentModel;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
-{
+public class UIManager : MonoBehaviour
+{// Pause Menu script - Used for all UI code now
+
+    public static UIManager instance;
+
     // Variables
-
+    [Header("Screens")]
     public GameObject pauseMenu;
     public static bool isPaused;
-
-    public static bool helpOpened;
     public GameObject helpMenu;
+    public static bool helpOpened;
+     public GameObject playerHUD;
+    public GameObject endResults;
 
-    public GameObject playerHUD;
+    [Header("End Results Variables")]
+    public Text finalWaveText;
+
+    [Header("Raycast Prompt")]
+    private Text promptText;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,11 +45,7 @@ public class PauseMenu : MonoBehaviour
             {
                 PauseGame();
                 playerHUD.SetActive(false);
-            }
-            /*else if (isPaused == true)
-            {
-                return;
-            }*/
+            }            
             else
             {
                 if (helpOpened == false)
@@ -43,6 +55,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
+        
 
     public void PauseGame()
     {
@@ -105,6 +118,22 @@ public class PauseMenu : MonoBehaviour
 
     }
 
+    public void ShowResultsScreen()
+    {
+        playerHUD.SetActive(false);
+        endResults.SetActive(true);
+        ShowMouse();
+        finalWaveText.text = "YOU SURVIVED " + WaveCounter.finalWaveCount + " WAVES";
+    }
+
+    public void RestartGame()
+    {
+        pauseFailsafe();
+        SceneManager.LoadScene("Level");
+    }
+
+    #region Hide/Show Mouse
+
     private void HideMouse()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -121,4 +150,6 @@ public class PauseMenu : MonoBehaviour
         PlayerLook.Instance.xSensitivity = 0f;
         PlayerLook.Instance.ySensitivity = 0f;
     }
+
+    #endregion
 }

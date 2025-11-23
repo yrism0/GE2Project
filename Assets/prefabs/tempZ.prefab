@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Z: {fileID: 0}
-  health: 50
+  health: 20
 --- !u!114 &7070833138506862137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,5 +203,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dcee2d6aab9714192cfcb798c92487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 10
   playerhealth: {fileID: 2432499347331993826, guid: 55ed9e23edec082418bd1cccbfd32247, type: 3}

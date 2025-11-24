@@ -123,6 +123,7 @@ public class UIManager : MonoBehaviour
         playerHUD.SetActive(false);
         endResults.SetActive(true);
         ShowMouse();
+        
         finalWaveText.text = "YOU SURVIVED " + WaveCounter.finalWaveCount + " WAVES";
     }
 
@@ -140,7 +141,8 @@ public class UIManager : MonoBehaviour
         Cursor.visible = false;
         PlayerLook.Instance.xSensitivity = 30f;
         PlayerLook.Instance.ySensitivity = 30f;
-        
+        PlayerMotor.instance.speed = 5f;
+
     }
 
     private void ShowMouse()
@@ -149,7 +151,10 @@ public class UIManager : MonoBehaviour
         Cursor.visible = true;
         PlayerLook.Instance.xSensitivity = 0f;
         PlayerLook.Instance.ySensitivity = 0f;
+        PlayerMotor.instance.speed = 0f;
     }
+
+    
 
     #endregion
 }

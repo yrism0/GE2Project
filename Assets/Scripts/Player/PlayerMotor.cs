@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
+    public static PlayerMotor instance;
+
     // Variables
-    private InputManager inputManager;
+    
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool isGrounded;
@@ -16,10 +18,15 @@ public class PlayerMotor : MonoBehaviour
     bool lerpCrouch = false;
     [SerializeField] bool sprinting = false;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        inputManager = GetComponent<InputManager>();
+        
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
     }

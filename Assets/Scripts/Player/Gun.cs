@@ -49,7 +49,7 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, ~mask))
         {
             
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
 
             Zstats zombieHit = hit.transform.GetComponent<Zstats>();
             if (zombieHit != null)

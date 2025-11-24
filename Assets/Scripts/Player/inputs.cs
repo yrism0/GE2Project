@@ -33,10 +33,10 @@ public class inputs : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
      
         internalDistance = raycast.DisFromTar;
-        pointsCheckup = PointManager.points;
+        //pointsCheckup = PointManager.points;
         if (doorOpen == false && internalDistance < 5 && raycast.isDoor == true && pointsCheckup >= 0)
         {
             if (Input.GetKeyDown("e"))

@@ -7,6 +7,7 @@ public class WaveCounter : MonoBehaviour
 
     public Text wavecountdisplay;
     public static int wavecount;
+    public static int wavetick;
 
     public static int finalWaveCount; // For use in End results UI
 
@@ -28,7 +29,7 @@ public class WaveCounter : MonoBehaviour
     void Update()
     {
         wavecountdisplay.text = "wave" + ":" + wavecount.ToString(); 
-        if (Input.GetKeyDown("m"))
+        if (wavetick == 3)
         {
             Debug.Log("wave+1");
             wavecount++;
@@ -38,7 +39,8 @@ public class WaveCounter : MonoBehaviour
             {
                 Destroy(gameObj);
             }
-
+            wavespawn.Zcount = 0;
+            wavetick = 0;
         }
     }
 }

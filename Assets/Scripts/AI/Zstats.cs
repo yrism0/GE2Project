@@ -47,6 +47,8 @@ public class Zstats : MonoBehaviour
     {
         PointManager.instance.AddPoints();
         Destroy(gameObject);
+        wavespawn.Zcount --;
+        WaveCounter.wavetick++;
     }
 
     void AddBonusPoints()

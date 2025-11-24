@@ -39,6 +39,16 @@ public class Gun : MonoBehaviour
         {
             revammo = 100;
         }
+
+        if (revammo <= -1)
+        {
+            revammo = 0;
+        }
+
+        if (ammodiff > revammo)
+        {
+            ammodiff = revammo;
+        }
     }
 
     void Shoot()

@@ -12,8 +12,10 @@ public class PlayerHealth : MonoBehaviour
     public float chipSpeed = 2f;
     private float lerpTimer;    
     [SerializeField] private float healDelay = 5f;
-    [SerializeField] private float healSpeed = 2f;
+    [SerializeField] private float healSpeed = 0.01f;
     private float healTimer;
+
+    private bool healthPerk;
 
     [Header("Health UI")]
     public Slider healthBar;
@@ -80,5 +82,15 @@ public class PlayerHealth : MonoBehaviour
     public void GameOver()
     {
         UIManager.instance.ShowResultsScreen();
+    }
+
+    public void BuyHealthPerk()
+    {
+        if (healthPerk == false && PowerManager.instance.powerOn == true)
+        {
+            healthPerk = true;
+            maxHealth = 150f;
+            healDelay = 4f;
+        }
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMotor : MonoBehaviour
 {
     // Variables
+    private InputManager inputManager;
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool isGrounded;
@@ -13,11 +14,12 @@ public class PlayerMotor : MonoBehaviour
     bool crouching = false;
     float crouchTimer = 1;
     bool lerpCrouch = false;
-    bool sprinting = false;
+    [SerializeField] bool sprinting = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        inputManager = GetComponent<InputManager>();
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
     }

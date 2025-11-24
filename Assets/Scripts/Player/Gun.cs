@@ -3,20 +3,29 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
+    public static Gun instance;
+
     public float gunDamage = 10f;
     public float range = 100f;
     public int ammo = 0;
     public int revammo = 0;
     public int ammodiff;
 
+    public bool damagePerk;
+
     public Text Acount;
     public Camera fpsCam;
     public LayerMask mask;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void Start()
     {
         ammo = 7;
-        revammo = 21;
+        revammo = 49;
         ammodiff = 0;
     }
 
@@ -68,5 +77,21 @@ public class Gun : MonoBehaviour
             }
         }
 
+    }
+
+    public void MaxAmmo()
+    {
+        revammo = 70;
+        ammo = 7;
+        ammodiff = 0;
+    }
+
+    public void BuyDamagePerk()
+    {
+        if (damagePerk == false && PowerManager.instance.powerOn == true)
+        {
+            damagePerk = true;
+            gunDamage = 20f;
+        }
     }
 }

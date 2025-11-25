@@ -33,6 +33,7 @@ public class Gun : MonoBehaviour
     bool canShoot = true;    
     [SerializeField] private Slider reloadSlider;
     [SerializeField] GameObject reloadUI;
+    public Animator reloadAnimator;
 
     [Header("Gun Perks")]
     public bool damagePerk;
@@ -53,7 +54,7 @@ public class Gun : MonoBehaviour
     public void Start()
     {
         reloadUI.SetActive(false);
-        
+        reloadAnimator = GetComponent<Animator>();
         currentCooldown = fireCooldown;
 
         ammo = 7;
@@ -164,7 +165,7 @@ public class Gun : MonoBehaviour
     {
         isReloading = true;
         canShoot = false;
-        
+        reloadAnimator.SetTrigger("isReloading");
         Invoke("ReloadCompleted", reloadTime);
     }
         
@@ -177,6 +178,7 @@ public class Gun : MonoBehaviour
         isReloading = false;
         canShoot = true;
 
+        reloadAnimator.ResetTrigger("isReloading");
         reloadUI.SetActive(false);
         rsTimer = 0;
     }

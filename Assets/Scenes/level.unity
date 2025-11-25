@@ -20141,6 +20141,7 @@ GameObject:
   - component: {fileID: 1348977067}
   - component: {fileID: 1348977066}
   - component: {fileID: 1348977069}
+  - component: {fileID: 1348977070}
   m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
@@ -20252,19 +20253,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunDamage: 10
   range: 100
+  onGunShoot:
+    m_PersistentCalls:
+      m_Calls: []
+  fireCooldown: 0.1
+  isAutomatic: 0
   ammo: 0
   revammo: 0
   ammodiff: 0
-  reloadTime: 2
+  reloadTime: 1.75
   rsTimer: 0
   reloadSlider: {fileID: 101539680}
   reloadUI: {fileID: 1104107084}
+  reloadAnimator: {fileID: 0}
   damagePerk: 0
   Acount: {fileID: 2117175966}
   fpsCam: {fileID: 1412826288}
   mask:
     serializedVersion: 2
     m_Bits: 1280
+--- !u!95 &1348977070
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348977064}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd5087422d43a1041a9b6e961d09a950, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1351368268
 GameObject:
   m_ObjectHideFlags: 0

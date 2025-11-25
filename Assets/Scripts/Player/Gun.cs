@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Gun : MonoBehaviour
 { // SS - Gun Script - Controls behaviour of the currently held weapon
@@ -13,6 +14,14 @@ public class Gun : MonoBehaviour
     [Header("Gun Stats")]
     public float gunDamage = 10f;
     public float range = 100f;
+    public UnityEvent onGunShoot;
+    public float fireCooldown;
+
+    public bool isAutomatic;
+
+    private float currentCooldown;
+
+    [Header("Ammo")]
     public int ammo = 0;
     public int revammo = 0;
     public int ammodiff;
@@ -33,6 +42,9 @@ public class Gun : MonoBehaviour
     public Camera fpsCam;
     public LayerMask mask;
 
+
+
+
     private void Awake()
     {
         instance = this;
@@ -41,6 +53,8 @@ public class Gun : MonoBehaviour
     public void Start()
     {
         reloadUI.SetActive(false);
+        
+        currentCooldown = fireCooldown;
 
         ammo = 7;
         revammo = 49;
@@ -51,10 +65,34 @@ public class Gun : MonoBehaviour
     {
         Acount.text = ammo.ToString() + "/" + revammo.ToString();
         Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward, Color.green);
-        if (Input.GetButtonDown("Fire1") & ammo > 0 & canShoot == true & !isReloading)
+        if (isAutomatic)
         {
-            Shoot();
+            if (Input.GetButton("Fire1") & ammo > 0 & canShoot == true & !isReloading)
+            {
+                if (currentCooldown <= 0f)
+                {
+                    onGunShoot?.Invoke();
+                    currentCooldown = fireCooldown;
+                    Shoot();
+                }
+            }
         }
+        else
+        {
+            if (Input.GetButtonDown("Fire1") & ammo > 0 & canShoot == true & !isReloading)
+            {
+                if (currentCooldown <= 0f)
+                {
+                    onGunShoot?.Invoke();
+                    currentCooldown = fireCooldown;
+                    Shoot();
+                }
+            }
+        }
+
+        currentCooldown -= Time.deltaTime;
+        
+          
 
         UpdateReloadUI();
         if (Input.GetKeyDown("r") & ammo < 7 & revammo > 0 && isReloading == false)
@@ -101,9 +139,14 @@ public class Gun : MonoBehaviour
 
     public void MaxAmmo()
     {
+        // Pistol Ammo
+        
         revammo = 70;
         ammo = 7;
         ammodiff = 0;
+
+        // Shotgun Ammo
+
     }
 
     public void BuyDamagePerk()
@@ -115,7 +158,9 @@ public class Gun : MonoBehaviour
         }
     }
 
-   private void Reload() // Cannot shoot while reloading and Invokes the ReloadCompleted function after (reloadTime) amount of seconds
+    #region Reload
+
+    private void Reload() // Cannot shoot while reloading and Invokes the ReloadCompleted function after (reloadTime) amount of seconds
     {
         isReloading = true;
         canShoot = false;
@@ -156,5 +201,7 @@ public class Gun : MonoBehaviour
             rsTimer = 0;
         }
     }
-  
+
+    #endregion
+
 }

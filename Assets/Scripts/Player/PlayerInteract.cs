@@ -1,11 +1,14 @@
 using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
-{
+{ // SS - Player Interact Script - Manages the Raycast for player interactions
+
+    // Variables
+
     private Camera cam;
     [SerializeField] private float distance = 3f;
 
-    [SerializeField] private LayerMask mask;
+    [SerializeField] private LayerMask mask; // Mask is used to only hit objects in the Interactable Layer
     private PlayerUI playerUI;
 
     private InputManager inputManager;
@@ -19,7 +22,7 @@ public class PlayerInteract : MonoBehaviour
         
     void Update()
     {
-        playerUI.UpdateText(string.Empty);
+        playerUI.UpdateText(string.Empty); // Prompt UI is blank when not looking at anything
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * distance);
         RaycastHit hitInfo;
@@ -29,9 +32,9 @@ public class PlayerInteract : MonoBehaviour
             {
                 Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
                 playerUI.UpdateText(interactable.promptMessage);
-                if (inputManager.onFoot.Interact.triggered)
+                if (inputManager.onFoot.Interact.triggered) // IF Input Action Interact is used THEN...
                 {
-                    interactable.BaseInteract();
+                    interactable.BaseInteract(); // Runs BaseInteract function found in the Interactable script
                 }
             }
         }

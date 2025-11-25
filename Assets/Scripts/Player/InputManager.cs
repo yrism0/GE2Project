@@ -3,7 +3,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.LowLevel;
 
 public class InputManager : MonoBehaviour
-{
+{// SS - Input Manager Script - Manages player inputs recieved from the Input Actions Editor
+
     // Variables
     private PlayerInput playerInput;
     public PlayerInput.OnFootActions onFoot;

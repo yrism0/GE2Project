@@ -1,7 +1,9 @@
 using UnityEngine;
 
 public class PowerManager : Interactable
-{
+{ // SS - Power Manager Script - Manages the power state for the level
+
+    // Variables
     
     public static PowerManager instance;
     public bool powerOn = false;
@@ -30,18 +32,13 @@ public class PowerManager : Interactable
             powerOn = true;
             promptMessage = ("...");
         }
+
+        // SS - Utilises Unity Events to also change Material of Object
         
         
     }
 
-    protected override void Interact()
-    {
-        if (powerOn == true)
-        {
-            
-        }
-
-    }
+    
 
 
 }

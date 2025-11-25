@@ -1,9 +1,12 @@
 using UnityEngine;
 
 public class Door : Interactable
-{
+{// SS - Door Script - Makes use of interactable base - Opens door
+
+    // Variables
+
     [SerializeField] private GameObject door;
-    private bool doorOpen = false;
+    
     [SerializeField] private int doorCost;
     
 
@@ -21,12 +24,12 @@ public class Door : Interactable
 
     protected override void Interact()
     {
-        if (PointManager.instance.points >= doorCost)
+        if (PointManager.instance.points >= doorCost) // IF Player points are greater than the Door cost THEN...
         {
           
-            Destroy(gameObject);
-            PointManager.instance.points -= doorCost;
-            PointManager.instance.UpdatePointsUI();
+            Destroy(gameObject); // Remove Door
+            PointManager.instance.points -= doorCost; // Remove Cost from Points
+            PointManager.instance.UpdatePointsUI(); 
         }
         else
         {

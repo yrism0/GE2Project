@@ -2,18 +2,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
-{
-    // Variables
+{ // SS - Player Health Script - Manages the Player health and its corresponding UI
 
-    
-    private float health;
+    // Variables
+        
     [Header("Health Values")]
     public float maxHealth = 100f;
-    public float chipSpeed = 2f;
+    private float health;
+
+    
     private float lerpTimer;    
-    [SerializeField] private float healDelay = 5f;
-    [SerializeField] private float healSpeed = 0.01f;
+    [SerializeField] private float healDelay = 5f; // The amount of time that must pass before healing begins
+    [SerializeField] private float healSpeed = 0.01f; // The speed the health restores at (The lower the faster)
     private float healTimer;
+
 
     private bool healthPerk;
 
@@ -29,15 +31,15 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        health = Mathf.Clamp(health, 0, maxHealth);
+        health = Mathf.Clamp(health, 0, maxHealth); // Clamps health so that its values MUST stay between 0 and the MaxHealth value
         UpdateHealthUI();
         
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K)) // Debug Code to Test
         {
             TakeDamage(Random.Range(5, 10));
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L)) // Debug Code to Test
         {
             RestoreHealth(15);
         }
@@ -45,13 +47,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateHealthUI()
     {
-        //Debug.Log(health);
+       
         healthBar.value = health;        
         lerpTimer += Time.deltaTime;
-        if (lerpTimer > healDelay)
+        if (lerpTimer > healDelay) // IF (healDelay) amount of time has passed THEN...
         {
-            healTimer += Time.deltaTime;
-            if (healTimer > healSpeed)
+            healTimer += Time.deltaTime; 
+            if (healTimer > healSpeed) // Everytime healTimer ticks past healSpeed THEN...
             {
                 health++;
                 healTimer = 0;
@@ -91,6 +93,8 @@ public class PlayerHealth : MonoBehaviour
             healthPerk = true;
             maxHealth = 150f;
             healDelay = 4f;
+            healthBar.maxValue = 150; // Increases max value of slider to show increased health
+            
         }
     }
 }

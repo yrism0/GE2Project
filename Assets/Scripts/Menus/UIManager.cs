@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
-{// Pause Menu script - Used for all UI code now
+{// SS - Pause Menu script - Used for all UI code now
 
     public static UIManager instance;
 
@@ -13,9 +13,11 @@ public class UIManager : MonoBehaviour
     [Header("Screens")]
     public GameObject pauseMenu;
     public static bool isPaused;
+
     public GameObject helpMenu;
     public static bool helpOpened;
-     public GameObject playerHUD;
+
+    public GameObject playerHUD;
     public GameObject endResults;
 
     [Header("End Results Variables")]
@@ -68,7 +70,7 @@ public class UIManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        // Method used by Resume button on Pause menu -
+        // Method used by Resume button on Pause menu 
         // Hides Pause Menu and gameplay resumes
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;

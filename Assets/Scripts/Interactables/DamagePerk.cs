@@ -1,9 +1,13 @@
 using UnityEngine;
 
 public class DamagePerk : Interactable
-{
+{ // SS - Damage Perk Script -  Makes use of interactable base - Manages the Damage Perk Interactable
+
+    // Variables
+
     [SerializeField] private Material activeMaterial;
     private MeshRenderer meshRenderer;
+
     [SerializeField] private int dPerkCost;
     private bool dPerkBought = false;
 
@@ -16,23 +20,23 @@ public class DamagePerk : Interactable
     // Update is called once per frame
     void Update()
     {
-        if(PowerManager.instance.powerOn == true)
+        if(PowerManager.instance.powerOn == true) // IF Power is enabled THEN...
         {
-            meshRenderer.material = activeMaterial;
-            promptMessage = ("Buy Damage Perk? (PRICE)");
+            meshRenderer.material = activeMaterial; // Change object material
+            promptMessage = ("Buy Damage Perk? (PRICE)"); // Change interaction prompt
         }
     }
 
     protected override void Interact()
     {
-        if(PowerManager.instance.powerOn == true)
+        if(PowerManager.instance.powerOn == true) // IF Power is enabled THEN...
         {
-            if (PointManager.instance.points >= dPerkCost && dPerkBought == false)
+            if (PointManager.instance.points >= dPerkCost && dPerkBought == false) // Player can buy perk if they have enough points
             {
                 dPerkBought = true;
                 PointManager.instance.points -= dPerkCost;
                 PointManager.instance.UpdatePointsUI();
-                promptMessage = ("Already Purchased");
+                promptMessage = ("Already Purchased"); // Change prompt once bought
                 
             }
             else
@@ -45,6 +49,7 @@ public class DamagePerk : Interactable
             return;
         }
         
+        // SS - Unity Event runs on interaction - Runs BuyDamagePerk Function on Gun Script
 
     }
 }

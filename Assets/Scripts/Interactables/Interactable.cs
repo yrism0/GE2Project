@@ -1,21 +1,24 @@
 using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
-{
+{ // SS - Interactable Script - The basis for all interactables and events
+
+    // Variables
+
     public bool useEvents;
     public string promptMessage;
 
    public void BaseInteract()
     {
-        if (useEvents)
+        if (useEvents) // IF useEvents is ticked in the editore THEN...
         {
-            GetComponent<InteractionEvent>().OnInteract.Invoke();
+            GetComponent<InteractionEvent>().OnInteract.Invoke(); // Gets script and Invokes the Unity Event called "OnInteract"
         }            
         Interact();
     }
 
-    protected virtual void Interact()
+    protected virtual void Interact() // This function is overriden by other interactable scripts - It will run on Interaction
     {
-        //NO CODE TO BE WRITTEN HERE
+        // SS - NO CODE TO BE WRITTEN HERE
     }
 }

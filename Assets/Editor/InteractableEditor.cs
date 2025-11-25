@@ -2,7 +2,8 @@ using UnityEditor;
 
 [CustomEditor(typeof(Interactable), true)]
 public class InteractableEditor : Editor
-{
+{ // SS - Interactable Editor scipt - Controls the addition of Unity Events on EventOnlyInteracts
+
     public override void OnInspectorGUI()
     {
         Interactable interactable = (Interactable)target;

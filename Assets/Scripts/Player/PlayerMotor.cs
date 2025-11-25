@@ -1,7 +1,8 @@
 using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
-{
+{ // SS - Player Motor Script - Controls basic player movement 
+
     public static PlayerMotor instance;
 
     // Variables
@@ -16,7 +17,7 @@ public class PlayerMotor : MonoBehaviour
     bool crouching = false;
     float crouchTimer = 1;
     bool lerpCrouch = false;
-    [SerializeField] bool sprinting = false;
+    bool sprinting = false;
 
     private void Awake()
     {
@@ -28,7 +29,7 @@ public class PlayerMotor : MonoBehaviour
     {
         
         controller = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked; // Locks mouse cursor to the screen
     }
 
     // Update is called once per frame
@@ -84,7 +85,7 @@ public class PlayerMotor : MonoBehaviour
         moveDirection.z = input.y;
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
         playerVelocity.y += gravity * Time.deltaTime;
-        if (isGrounded && playerVelocity.y < 0)
+        if (isGrounded && playerVelocity.y < 0) 
         {
             playerVelocity.y = -2f;
         }

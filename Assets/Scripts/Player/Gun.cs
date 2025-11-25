@@ -1,18 +1,34 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
-{
+{ // SS - Gun Script - Controls behaviour of the currently held weapon
+
+    // Variables
+
     public static Gun instance;
 
+    [Header("Gun Stats")]
     public float gunDamage = 10f;
     public float range = 100f;
     public int ammo = 0;
     public int revammo = 0;
     public int ammodiff;
 
+    [Header("Reload")]
+    public float reloadTime = 2f;
+    public float rsTimer;
+    bool isReloading = false;
+    bool canShoot = true;    
+    [SerializeField] private Slider reloadSlider;
+    [SerializeField] GameObject reloadUI;
+
+    [Header("Gun Perks")]
     public bool damagePerk;
 
+    [Header("Other")]
     public Text Acount;
     public Camera fpsCam;
     public LayerMask mask;
@@ -24,6 +40,8 @@ public class Gun : MonoBehaviour
 
     public void Start()
     {
+        reloadUI.SetActive(false);
+
         ammo = 7;
         revammo = 49;
         ammodiff = 0;
@@ -33,16 +51,17 @@ public class Gun : MonoBehaviour
     {
         Acount.text = ammo.ToString() + "/" + revammo.ToString();
         Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward, Color.green);
-        if (Input.GetButtonDown("Fire1") & ammo > 0 )
+        if (Input.GetButtonDown("Fire1") & ammo > 0 & canShoot == true & !isReloading)
         {
             Shoot();
         }
 
-        if (Input.GetKeyDown("r") & ammo < 7 & revammo > 0)
+        UpdateReloadUI();
+        if (Input.GetKeyDown("r") & ammo < 7 & revammo > 0 && isReloading == false)
         {
-            ammo += ammodiff;
-            revammo -= ammodiff;
-            ammodiff = 0;
+
+            Reload();
+
         }
         if (Input.GetKeyDown("k"))
         {
@@ -60,6 +79,7 @@ public class Gun : MonoBehaviour
         }
     }
 
+
     void Shoot()
     {
         ammo -= 1;
@@ -67,7 +87,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range, ~mask))
         {
-            
+
             //Debug.Log(hit.transform.name);
 
             Zstats zombieHit = hit.transform.GetComponent<Zstats>();
@@ -94,4 +114,47 @@ public class Gun : MonoBehaviour
             gunDamage = 20f;
         }
     }
+
+   private void Reload() // Cannot shoot while reloading and Invokes the ReloadCompleted function after (reloadTime) amount of seconds
+    {
+        isReloading = true;
+        canShoot = false;
+        
+        Invoke("ReloadCompleted", reloadTime);
+    }
+        
+    private void ReloadCompleted() // Reloads the Weapon and enables shooting again
+    {
+        ammo += ammodiff;
+        revammo -= ammodiff;
+        ammodiff = 0;
+
+        isReloading = false;
+        canShoot = true;
+
+        reloadUI.SetActive(false);
+        rsTimer = 0;
+    }
+
+    private void UpdateReloadUI()
+    {
+        
+        
+        if (isReloading)
+        {
+            rsTimer += Time.deltaTime;
+            reloadSlider.maxValue = reloadTime;
+
+            reloadUI.SetActive(true);
+            
+            reloadSlider.value = rsTimer;
+            
+            
+        }
+        else
+        {
+            rsTimer = 0;
+        }
+    }
+  
 }

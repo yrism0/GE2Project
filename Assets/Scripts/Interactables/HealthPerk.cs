@@ -1,9 +1,13 @@
 using UnityEngine;
 
 public class HealthPerk : Interactable
-{
+{ // SS - Health Perk Script -  Makes use of interactable base - Manages health perk
+
+    // Variables
+
     [SerializeField] private Material activeMaterial;
     private MeshRenderer meshRenderer;
+
     [SerializeField] private int hPerkCost;
     private bool hPerkBought = false;
 
@@ -16,10 +20,10 @@ public class HealthPerk : Interactable
     // Update is called once per frame
     void Update()
     {
-        if (PowerManager.instance.powerOn == true)
+        if (PowerManager.instance.powerOn == true) // IF Power is enabled THEN...
         {
-            meshRenderer.material = activeMaterial;
-            promptMessage = ("Buy Health Perk? (PRICE)");
+            meshRenderer.material = activeMaterial; // Change object material
+            promptMessage = ("Buy Health Perk? (PRICE)"); // Change prompt text
         }
     }
 

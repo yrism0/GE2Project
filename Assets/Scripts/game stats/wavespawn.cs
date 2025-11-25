@@ -7,17 +7,24 @@ public class wavespawn : MonoBehaviour
     [SerializeField] private GameObject zombies;
 
     public static int Zcount = 0;
-    public static int maxZcount = 3;
+    public static double maxZcount = 4;
+    public bool isWaveDone;
+    public static bool isSpwanDone;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        isSpwanDone = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( Zcount <= maxZcount)
+        if (Zcount == maxZcount)
+        {
+            isSpwanDone = true;
+        }
+
+        if ( Zcount <= maxZcount & isSpwanDone == false )
         {
             spawnzombie();
             Zcount ++;

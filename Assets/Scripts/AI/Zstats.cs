@@ -4,7 +4,9 @@ public class Zstats : MonoBehaviour
 {
 
     public GameObject Z;
-    public  float  health = 50f;
+    public  float  health = 30f;
+    public static int healthCheck;
+    public static int healthCheckStandIn = 0;
 
     // Will be used for shooting zombie points
 
@@ -20,7 +22,12 @@ public class Zstats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-               
+        if (healthCheck > healthCheckStandIn)
+        {
+            Debug.Log("hp up");
+            health += 10f;
+            healthCheck--;
+        }
     }
     public void TakeDamage(float damageAmount)
     {

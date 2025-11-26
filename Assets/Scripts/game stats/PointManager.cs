@@ -31,7 +31,7 @@ public class PointManager : MonoBehaviour
 
     public void UpdatePointsUI() // display points 
     {
-        pointText.text = "Score: " + points;
+        pointText.text = "POINTS: " + points;
     }
 
 

@@ -29,10 +29,10 @@ public class WaveCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        wavecountdisplay.text = "wave" + ":" + wavecount.ToString(); 
+        wavecountdisplay.text = "WAVE" + ":" + wavecount.ToString(); 
         if (wavetick == wavespawn.maxZcount)
         {
-            Debug.Log("wave+1");
+            //Debug.Log("wave+1");
             wavecount++;
             finalWaveCount = wavecount;
 

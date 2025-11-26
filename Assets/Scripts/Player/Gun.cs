@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class Gun : MonoBehaviour
 { // SS - Gun Script - Controls behaviour of the currently held weapon
@@ -37,6 +38,7 @@ public class Gun : MonoBehaviour
 
     [Header("Gun Perks")]
     public bool damagePerk;
+    private float dPerkCost = 3000f;
 
     [Header("Other")]
     public Text Acount;
@@ -152,7 +154,7 @@ public class Gun : MonoBehaviour
 
     public void BuyDamagePerk()
     {
-        if (damagePerk == false && PowerManager.instance.powerOn == true)
+        if (damagePerk == false && PowerManager.instance.powerOn == true & PointManager.instance.points >= dPerkCost)
         {
             damagePerk = true;
             gunDamage = 20f;

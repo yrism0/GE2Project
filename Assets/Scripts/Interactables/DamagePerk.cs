@@ -23,7 +23,7 @@ public class DamagePerk : Interactable
         if(PowerManager.instance.powerOn == true) // IF Power is enabled THEN...
         {
             meshRenderer.material = activeMaterial; // Change object material
-            promptMessage = ("Buy Damage Perk? (PRICE)"); // Change interaction prompt
+            promptMessage = ("Buy Damage Perk? (3000P)"); // Change interaction prompt
         }
     }
 

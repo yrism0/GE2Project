@@ -23,7 +23,7 @@ public class HealthPerk : Interactable
         if (PowerManager.instance.powerOn == true) // IF Power is enabled THEN...
         {
             meshRenderer.material = activeMaterial; // Change object material
-            promptMessage = ("Buy Health Perk? (300P)"); // Change prompt text
+            promptMessage = ("Buy Health Perk? (3000P)"); // Change prompt text
         }
     }
 

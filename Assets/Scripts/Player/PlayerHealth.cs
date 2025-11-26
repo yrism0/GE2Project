@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
 
 
     private bool healthPerk;
+    private float hPerkCost = 3000f;
 
     [Header("Health UI")]
     public Slider healthBar;
@@ -88,7 +89,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void BuyHealthPerk()
     {
-        if (healthPerk == false && PowerManager.instance.powerOn == true)
+        if (healthPerk == false && PowerManager.instance.powerOn == true & PointManager.instance.points >= hPerkCost)
         {
             healthPerk = true;
             maxHealth = 150f;

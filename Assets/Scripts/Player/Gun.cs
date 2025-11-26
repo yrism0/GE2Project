@@ -104,10 +104,7 @@ public class Gun : MonoBehaviour
             Reload();
 
         }
-        if (Input.GetKeyDown("k"))
-        {
-            revammo = 100;
-        }
+        
 
         if (revammo <= -1)
         {

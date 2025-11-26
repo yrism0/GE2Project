@@ -2305,7 +2305,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 491452944}
+  m_Father: {fileID: 1179330451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &119925401
 GameObject:
@@ -5019,7 +5019,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 491452944}
+  m_Father: {fileID: 1179330451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &346617147
 GameObject:
@@ -6376,6 +6376,7 @@ GameObject:
   - component: {fileID: 407310006}
   - component: {fileID: 407310005}
   - component: {fileID: 407310004}
+  - component: {fileID: 407310008}
   m_Layer: 9
   m_Name: D7
   m_TagString: door
@@ -6410,7 +6411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc98d0fe201f0ed4995dcaeb1367e6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useEvents: 0
+  useEvents: 1
   promptMessage: Open Door (1500P)
   door: {fileID: 407310002}
   doorCost: 1500
@@ -6488,6 +6489,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407310002}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &407310008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407310002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5caf9066427ee94289c74c175b66ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1713735032}
+        m_TargetAssemblyTypeName: wavespawn, Assembly-CSharp
+        m_MethodName: openroom6
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &416046149
 GameObject:
   m_ObjectHideFlags: 0
@@ -6629,9 +6657,9 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1942141756}
+      - m_Target: {fileID: 1765809050}
         m_TargetAssemblyTypeName: wavespawn, Assembly-CSharp
-        m_MethodName: openroom1
+        m_MethodName: openroom1A3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8633,13 +8661,8 @@ Transform:
   m_Children:
   - {fileID: 1488926910}
   - {fileID: 1256648784}
-  - {fileID: 1612441556}
-  - {fileID: 333881519}
-  - {fileID: 119659340}
   - {fileID: 1745532730}
   - {fileID: 1160395683}
-  - {fileID: 550995379}
-  - {fileID: 1193901669}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &492267238
@@ -9169,6 +9192,7 @@ GameObject:
   - component: {fileID: 534539519}
   - component: {fileID: 534539518}
   - component: {fileID: 534539521}
+  - component: {fileID: 534539522}
   m_Layer: 9
   m_Name: D5
   m_TagString: door
@@ -9277,10 +9301,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc98d0fe201f0ed4995dcaeb1367e6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useEvents: 0
+  useEvents: 1
   promptMessage: Open Door (1200)
   door: {fileID: 534539516}
   doorCost: 1200
+--- !u!114 &534539522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534539516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5caf9066427ee94289c74c175b66ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1179330450}
+        m_TargetAssemblyTypeName: wavespawn, Assembly-CSharp
+        m_MethodName: openroom5A4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &547117971
 GameObject:
   m_ObjectHideFlags: 0
@@ -9526,7 +9577,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 491452944}
+  m_Father: {fileID: 1713735033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559290407
 GameObject:
@@ -17578,7 +17629,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sWave: 0
   sPoints: 0
-  sMaxZ: 0
 --- !u!4 &1092447817
 Transform:
   m_ObjectHideFlags: 0
@@ -19082,8 +19132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawners:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 119659340}
+  - {fileID: 333881519}
   zombies: {fileID: 4400374006549193556, guid: 0214f270ee97de54381f5fb5de4ea712, type: 3}
   isWaveDone: 0
 --- !u!4 &1179330451
@@ -19098,7 +19148,9 @@ Transform:
   m_LocalPosition: {x: 6.9951067, y: 11.953261, z: -1.0097173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 119659340}
+  - {fileID: 333881519}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1181113537
@@ -19200,7 +19252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 491452944}
+  m_Father: {fileID: 1713735033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1195386208
 GameObject:
@@ -19483,8 +19535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawners:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1612441556}
   zombies: {fileID: 4400374006549193556, guid: 0214f270ee97de54381f5fb5de4ea712, type: 3}
   isWaveDone: 0
 --- !u!4 &1222484295
@@ -19499,7 +19550,8 @@ Transform:
   m_LocalPosition: {x: 6.9951067, y: 11.953261, z: -1.0097173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1612441556}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1223780623
@@ -20636,6 +20688,7 @@ GameObject:
   - component: {fileID: 1263851549}
   - component: {fileID: 1263851548}
   - component: {fileID: 1263851551}
+  - component: {fileID: 1263851552}
   m_Layer: 9
   m_Name: D4
   m_TagString: door
@@ -20744,10 +20797,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc98d0fe201f0ed4995dcaeb1367e6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useEvents: 0
+  useEvents: 1
   promptMessage: Open Door (1200P)
   door: {fileID: 1263851546}
   doorCost: 1200
+--- !u!114 &1263851552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263851546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5caf9066427ee94289c74c175b66ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1179330450}
+        m_TargetAssemblyTypeName: wavespawn, Assembly-CSharp
+        m_MethodName: openroom5A3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1270123288
 GameObject:
   m_ObjectHideFlags: 0
@@ -26950,7 +27030,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 491452944}
+  m_Father: {fileID: 1222484295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613484314
 GameObject:
@@ -28667,8 +28747,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawners:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 550995379}
+  - {fileID: 1193901669}
   zombies: {fileID: 4400374006549193556, guid: 0214f270ee97de54381f5fb5de4ea712, type: 3}
   isWaveDone: 0
 --- !u!4 &1713735033
@@ -28683,7 +28763,9 @@ Transform:
   m_LocalPosition: {x: 6.9951067, y: 11.953261, z: -1.0097173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 550995379}
+  - {fileID: 1193901669}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1728276812
@@ -30105,6 +30187,7 @@ GameObject:
   - component: {fileID: 1812141480}
   - component: {fileID: 1812141479}
   - component: {fileID: 1812141482}
+  - component: {fileID: 1812141483}
   m_Layer: 9
   m_Name: D6
   m_TagString: door
@@ -30213,10 +30296,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc98d0fe201f0ed4995dcaeb1367e6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useEvents: 0
+  useEvents: 1
   promptMessage: Open Door (1000P)
   door: {fileID: 1812141477}
   doorCost: 1000
+--- !u!114 &1812141483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812141477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5caf9066427ee94289c74c175b66ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1222484294}
+        m_TargetAssemblyTypeName: wavespawn, Assembly-CSharp
+        m_MethodName: openroom2A5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1813570176
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ public class Zstats : MonoBehaviour
 {
 
     public GameObject Z;
-    public  float  health = 30f;
+    public float health = 30f;
     public static int healthCheck;
     public static int healthCheckStandIn = 0;
 

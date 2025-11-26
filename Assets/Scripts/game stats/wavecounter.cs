@@ -8,7 +8,7 @@ public class WaveCounter : MonoBehaviour
     public Text wavecountdisplay;
     public static int wavecount;
     public static int wavetick;
-    
+    public static int startWavePoints;
 
     public static int finalWaveCount; // For use in End results UI
 
@@ -35,16 +35,19 @@ public class WaveCounter : MonoBehaviour
             //Debug.Log("wave+1");
             wavecount++;
             finalWaveCount = wavecount;
+            startWavePoints = PointManager.points;
 
             foreach (var gameObj in GameObject.FindGameObjectsWithTag("Z"))
             {
                 Destroy(gameObj);
             }
-            wavespawn.maxZcount = wavespawn.maxZcount + 4;
+            wavespawn.maxZcount = wavespawn.maxZcount + 3;
             Zstats.healthCheck++;
             wavespawn.Zcount = 0;
             wavespawn.isSpwanDone = false;
             wavetick = 0;
         }
     }
+
+   
 }

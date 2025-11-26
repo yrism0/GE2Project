@@ -31,10 +31,10 @@ public class HealthPerk : Interactable
     {
         if (PowerManager.instance.powerOn == true)
         {
-            if (PointManager.instance.points >= hPerkCost && hPerkBought == false)
+            if (PointManager.points >= hPerkCost && hPerkBought == false)
             {
                 hPerkBought = true;
-                PointManager.instance.points -= hPerkCost;
+                PointManager.points -= hPerkCost;
                 PointManager.instance.UpdatePointsUI();
                 promptMessage = ("Already Purchased");
 

@@ -24,11 +24,11 @@ public class Door : Interactable
 
     protected override void Interact()
     {
-        if (PointManager.instance.points >= doorCost) // IF Player points are greater than the Door cost THEN...
+        if (PointManager.points >= doorCost) // IF Player points are greater than the Door cost THEN...
         {
           
             Destroy(gameObject); // Remove Door
-            PointManager.instance.points -= doorCost; // Remove Cost from Points
+            PointManager.points -= doorCost; // Remove Cost from Points
             PointManager.instance.UpdatePointsUI(); 
         }
         else

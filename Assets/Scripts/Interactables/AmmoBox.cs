@@ -20,9 +20,9 @@ public class AmmoBox : Interactable
 
     protected override void Interact() // ON Interact...
     {
-        if (PointManager.instance.points >= abCost) // IF Player points are greater than Cost THEN...
+        if (PointManager.points >= abCost) // IF Player points are greater than Cost THEN...
         {            
-            PointManager.instance.points -= abCost; // Remove Cost from Points
+            PointManager.points -= abCost; // Remove Cost from Points
             PointManager.instance.UpdatePointsUI();
             Gun.instance.MaxAmmo(); // Run MaxAmmo function - found in the Gun Script
         }

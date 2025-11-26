@@ -89,7 +89,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void BuyHealthPerk()
     {
-        if (healthPerk == false && PowerManager.instance.powerOn == true & PointManager.instance.points >= hPerkCost)
+        if (healthPerk == false && PowerManager.instance.powerOn == true & PointManager.points >= hPerkCost)
         {
             healthPerk = true;
             maxHealth = 150f;

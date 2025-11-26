@@ -31,10 +31,10 @@ public class DamagePerk : Interactable
     {
         if(PowerManager.instance.powerOn == true) // IF Power is enabled THEN...
         {
-            if (PointManager.instance.points >= dPerkCost && dPerkBought == false) // Player can buy perk if they have enough points
+            if (PointManager.points >= dPerkCost && dPerkBought == false) // Player can buy perk if they have enough points
             {
                 dPerkBought = true;
-                PointManager.instance.points -= dPerkCost;
+                PointManager.points -= dPerkCost;
                 PointManager.instance.UpdatePointsUI();
                 promptMessage = ("Already Purchased"); // Change prompt once bought
                 

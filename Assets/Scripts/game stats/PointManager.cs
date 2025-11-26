@@ -5,7 +5,7 @@ public class PointManager : MonoBehaviour
 {
 
     public static PointManager instance;
-    public int points; // store players points
+    public static int points; // store players points
 
     public Text pointText; // display points on UI
 

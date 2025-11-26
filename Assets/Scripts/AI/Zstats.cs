@@ -38,7 +38,7 @@ public class Zstats : MonoBehaviour
             
             if (zombieBonusPoints > 0)
             {
-                PointManager.instance.points += zombieBonusPoints;
+                PointManager.points += zombieBonusPoints;
                 PointManager.instance.UpdatePointsUI();
                 
             }
@@ -63,7 +63,7 @@ public class Zstats : MonoBehaviour
         if (zombieBonusPoints > 0)
         {
             zombieBonusPoints -= 10;
-            PointManager.instance.points += 10;
+            PointManager.points += 10;
             PointManager.instance.UpdatePointsUI();
         }
         

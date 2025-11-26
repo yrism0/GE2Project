@@ -154,7 +154,7 @@ public class Gun : MonoBehaviour
 
     public void BuyDamagePerk()
     {
-        if (damagePerk == false && PowerManager.instance.powerOn == true & PointManager.instance.points >= dPerkCost)
+        if (damagePerk == false && PowerManager.instance.powerOn == true & PointManager.points >= dPerkCost)
         {
             damagePerk = true;
             gunDamage = 20f;

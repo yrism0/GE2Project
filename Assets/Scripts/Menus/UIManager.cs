@@ -86,6 +86,7 @@ public class UIManager : MonoBehaviour
         isPaused = false;
         SceneManager.LoadScene("MainMenu");
         ShowMouse();
+        
     }
 
     public void ShowHelpMenu()

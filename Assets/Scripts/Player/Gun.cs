@@ -44,6 +44,9 @@ public class Gun : MonoBehaviour
     [SerializeField] private Slider reloadSlider;
     [SerializeField] GameObject reloadUI;
     public Animator reloadAnimator;
+    public AnimationClip pistolReload;
+    public AnimationClip shotgunReload;
+    public AnimationClip idle;
 
     [Header("Gun Perks")]
     public bool damagePerk;
@@ -140,27 +143,32 @@ public class Gun : MonoBehaviour
             Reload2();
 
         }
-        // weapon swap
-        if (Input.GetKeyDown("1") &  isshotgunActive == true )
+        if (!isReloading)
         {
+            // weapon swap
+            if (Input.GetKeyDown("1") & isshotgunActive == true)
+            {
+                reloadAnimator.SetTrigger("isPistol");
+                shotgun.SetActive(false);
+                pistol.SetActive(true);
+                shotgunT.SetActive(false);
+                pistolT.SetActive(true);
+                isshotgunActive = false;
+                ispistolActive = true;
+            }
+            if (Input.GetKeyDown("2") & ispistolActive == true)
+            {
+                reloadAnimator.ResetTrigger("isPistol");                
+                pistol.SetActive(false);
+                shotgun.SetActive(true);
+                pistolT.SetActive(false);
+                shotgunT.SetActive(true);
+                isshotgunActive = true;
+                ispistolActive = false;
 
-            shotgun.SetActive(false);
-            pistol.SetActive(true);
-            shotgunT.SetActive(false);
-            pistolT.SetActive(true);
-            isshotgunActive = false;
-            ispistolActive = true;
+            }
         }
-        if (Input.GetKeyDown("2") & ispistolActive == true)
-        {
-            pistol.SetActive(false);
-            shotgun.SetActive(true);
-            pistolT.SetActive(false);
-            shotgunT.SetActive(true);
-            isshotgunActive = true;
-            ispistolActive = false;
-
-        }
+        
 
         if (revammo <= -1)
         {

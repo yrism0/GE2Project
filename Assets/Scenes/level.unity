@@ -17306,7 +17306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1063536242
 Transform:
   m_ObjectHideFlags: 0
@@ -22391,7 +22391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1348977065
 Transform:
   m_ObjectHideFlags: 0
@@ -22519,6 +22519,9 @@ MonoBehaviour:
   reloadSlider: {fileID: 101539680}
   reloadUI: {fileID: 1104107084}
   reloadAnimator: {fileID: 0}
+  pistolReload: {fileID: 0}
+  shotgunReload: {fileID: 0}
+  idle: {fileID: 0}
   damagePerk: 0
   Acount: {fileID: 2117175966}
   Acount2: {fileID: 0}
@@ -24228,7 +24231,10 @@ MonoBehaviour:
   rsTimer: 0
   reloadSlider: {fileID: 101539680}
   reloadUI: {fileID: 1104107084}
-  reloadAnimator: {fileID: 1412826294}
+  reloadAnimator: {fileID: 1348977070}
+  pistolReload: {fileID: 7400000, guid: 352cc636b6e77ad4ba28262b19a93908, type: 2}
+  shotgunReload: {fileID: 7400000, guid: c4f3d38200f9506469bab58a6c6595bc, type: 2}
+  idle: {fileID: 7400000, guid: 964a04c1bdf13824aa20d052ea6e7c7a, type: 2}
   damagePerk: 0
   Acount: {fileID: 2117175966}
   Acount2: {fileID: 2069414142}
@@ -24244,7 +24250,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412826286}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dd5087422d43a1041a9b6e961d09a950, type: 2}
   m_CullingMode: 0
@@ -25715,6 +25721,7 @@ GameObject:
   - component: {fileID: 1518841670}
   - component: {fileID: 1518841672}
   - component: {fileID: 1518841673}
+  - component: {fileID: 1518841674}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -25903,6 +25910,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptText: {fileID: 1655869252}
+--- !u!136 &1518841674
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518841662}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1521150786
 GameObject:
   m_ObjectHideFlags: 0

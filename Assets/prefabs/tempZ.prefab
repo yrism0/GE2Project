@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  body: {fileID: 0}
 --- !u!54 &5460150246928372100
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -204,5 +205,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dcee2d6aab9714192cfcb798c92487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 10
   playerhealth: {fileID: 2432499347331993826, guid: 55ed9e23edec082418bd1cccbfd32247, type: 3}

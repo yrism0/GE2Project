@@ -81,6 +81,7 @@ public class UIManager : MonoBehaviour
         isPaused = false;
         HideMouse();
         playerHUD.SetActive(true);
+        Gun.ispaused = false;
     }
 
     public void GoToMainMenu()

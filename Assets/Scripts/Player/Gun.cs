@@ -25,6 +25,7 @@ public class Gun : MonoBehaviour
     public float fireCooldown;
 
     public bool isAutomatic;
+    public static bool ispaused;
 
     private float currentCooldown;
 
@@ -68,6 +69,7 @@ public class Gun : MonoBehaviour
 
     public void Start()
     {
+        ispaused = false;
         pistol.SetActive(true);
         pistolT.SetActive(true);
         shotgun.SetActive(false);
@@ -93,7 +95,7 @@ public class Gun : MonoBehaviour
         Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward, Color.green);
         if (isAutomatic)
         {
-            if (Input.GetButton("Fire1") & ammo > 0 & canShoot == true & !isReloading & ispistolActive == true)
+            if (Input.GetButton("Fire1") & ammo > 0 & canShoot == true & !isReloading & ispistolActive == true & ispaused == false)
             {
                 if (currentCooldown <= 0f)
                 {
@@ -105,7 +107,7 @@ public class Gun : MonoBehaviour
         }
         else
         {
-            if (Input.GetButtonDown("Fire1") & ammo > 0 & canShoot == true & !isReloading & ispistolActive == true)
+            if (Input.GetButtonDown("Fire1") & ammo > 0 & canShoot == true & !isReloading & ispistolActive == true & ispaused == false)
             {
                 if (currentCooldown <= 0f)
                 {
@@ -116,7 +118,7 @@ public class Gun : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Fire1") & ammo2 > 0 & canShoot == true & !isReloading & isshotgunActive == true)
+        if (Input.GetButtonDown("Fire1") & ammo2 > 0 & canShoot == true & !isReloading & isshotgunActive == true & ispaused == false)
         {
             if (currentCooldown <= 0f)
             {

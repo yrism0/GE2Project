@@ -23,7 +23,16 @@ public class PointManager : MonoBehaviour
         UpdatePointsUI(); // update points
 
     }
-    
+
+    private void Update()
+    {
+        pointText.text = "POINTS: " + points;
+        if (Input.GetKeyDown("f")) 
+        {
+           points += 1000;
+        }
+    }
+
     public void AddPoints() // adding points and updating UI
     {
         

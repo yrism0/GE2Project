@@ -26,9 +26,11 @@ public class UIManager : MonoBehaviour
     [Header("Raycast Prompt")]
     private Text promptText;
 
+    public bool gameover;
     private void Awake()
     {
         instance = this;
+        
     }
 
 
@@ -36,12 +38,13 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         pauseMenu.SetActive(false);
+        gameover = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) & gameover == false)
         {
             if(isPaused == false)
             {
@@ -65,6 +68,7 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        Gun.ispaused = true;
         ShowMouse();
     }
 
@@ -118,6 +122,7 @@ public class UIManager : MonoBehaviour
         playerHUD.SetActive(true);
         HideMouse();
         playerHUD.SetActive(true);
+        Gun.ispaused = false;
 
     }
 
@@ -126,7 +131,7 @@ public class UIManager : MonoBehaviour
         playerHUD.SetActive(false);
         endResults.SetActive(true);
         ShowMouse();
-        
+        gameover = true;
         finalWaveText.text = "YOU SURVIVED " + WaveCounter.finalWaveCount + " WAVES";
     }
 

@@ -32,7 +32,7 @@ public class WaveCounter : MonoBehaviour
         wavecountdisplay.text = "WAVE" + ":" + wavecount.ToString(); 
         if (wavetick == wavespawn.maxZcount)
         {
-            //Debug.Log("wave+1");
+            
             wavecount++;
             finalWaveCount = wavecount;
             startWavePoints = PointManager.points;

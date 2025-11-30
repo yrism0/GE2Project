@@ -7,10 +7,15 @@ public class PowerManager : Interactable
     public Animator lever;
     public static PowerManager instance;
     public bool powerOn = false;
+    AudioManager audioManager;
 
+   
+        
+   
     private void Awake()
     {
         instance = this;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,7 +35,7 @@ public class PowerManager : Interactable
         if (powerOn == false)
         {
             lever.Play("pull the lever kronk");
-            
+            audioManager.PlaySFX(audioManager.powerOn); // plays SFX
             powerOn = true;
             promptMessage = ("...");
         }

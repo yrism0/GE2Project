@@ -16,6 +16,7 @@ TagManager:
   - Interactable
   - spR0
   - spR1
+  - Audio
   layers:
   - Default
   - TransparentFX

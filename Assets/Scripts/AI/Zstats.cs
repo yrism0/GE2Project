@@ -7,11 +7,18 @@ public class Zstats : MonoBehaviour
     public float health = 30f;
     public static int healthCheck;
     public static int healthCheckStandIn = 0;
+    AudioManager audioManager;
 
+   
     // Will be used for shooting zombie points
 
     public int zombieBonusPoints = 50;
-   
+
+    //get audio manager 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -56,6 +63,7 @@ public class Zstats : MonoBehaviour
         Destroy(gameObject);
         wavespawn.Zcount --;
         WaveCounter.wavetick++;
+        audioManager.PlaySFX(audioManager.zombieDeath); // plays SFX
     }
 
     void AddBonusPoints()

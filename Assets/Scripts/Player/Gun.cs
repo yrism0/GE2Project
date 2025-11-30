@@ -48,6 +48,7 @@ public class Gun : MonoBehaviour
     public AnimationClip pistolReload;
     public AnimationClip shotgunReload;
     public AnimationClip idle;
+    AudioManager audioManager;
 
     [Header("Gun Perks")]
     public bool damagePerk;
@@ -65,6 +66,7 @@ public class Gun : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     public void Start()
@@ -102,6 +104,7 @@ public class Gun : MonoBehaviour
                     onGunShoot?.Invoke();
                     currentCooldown = fireCooldown;
                     Shoot();
+                    
                 }
             }
         }
@@ -114,6 +117,8 @@ public class Gun : MonoBehaviour
                     onGunShoot?.Invoke();
                     currentCooldown = fireCooldown;
                     Shoot();
+                    
+                    audioManager.PlaySFX(audioManager.pistolShot); // plays SFX
                 }
             }
         }
@@ -125,6 +130,7 @@ public class Gun : MonoBehaviour
                 onGunShoot?.Invoke();
                 currentCooldown = fireCooldown;
                 Shoot2();
+                audioManager.PlaySFX(audioManager.shotgunShot); // plays SFX
             }
         }
 
@@ -137,12 +143,14 @@ public class Gun : MonoBehaviour
         {
 
             Reload();
+            audioManager.PlaySFX(audioManager.pistolReload); // plays SFX
 
         }
         if (Input.GetKeyDown("r") & ammo2 < 2 & revammo2 > 0 && isReloading == false & isshotgunActive == true)
         {
 
             Reload2();
+            audioManager.PlaySFX(audioManager.shotgunReload); // plays SFX
 
         }
         if (!isReloading)

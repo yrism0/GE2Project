@@ -19,9 +19,11 @@ public class PlayerMotor : MonoBehaviour
     bool lerpCrouch = false;
     bool sprinting = false;
 
+    
     private void Awake()
     {
         instance = this;
+        
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,6 +37,7 @@ public class PlayerMotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         isGrounded = controller.isGrounded;
         if (lerpCrouch)
         {
@@ -56,6 +59,7 @@ public class PlayerMotor : MonoBehaviour
                 crouchTimer = 0f;
             }
         }
+        
     }
 
     public void Crouch()
@@ -70,16 +74,19 @@ public class PlayerMotor : MonoBehaviour
         sprinting = !sprinting;
         if (sprinting)
         {
+            
             speed = 8;
         }
         else
         {
+            
             speed = 5;
         }
     }
 
     public void ProcessMove(Vector2 input)
     {
+        
         Vector3 moveDirection = Vector3.zero;
         moveDirection.x = input.x;
         moveDirection.z = input.y;
@@ -90,6 +97,7 @@ public class PlayerMotor : MonoBehaviour
             playerVelocity.y = -2f;
         }
         controller.Move(playerVelocity * Time.deltaTime);
+        
 
     }
 

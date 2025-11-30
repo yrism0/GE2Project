@@ -6,6 +6,12 @@ public class AmmoBox : Interactable
     // Variables
     [SerializeField] private int abCost;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +27,8 @@ public class AmmoBox : Interactable
     protected override void Interact() // ON Interact...
     {
         if (PointManager.points >= abCost) // IF Player points are greater than Cost THEN...
-        {            
+        {
+            audioManager.PlaySFX(audioManager.ammoPurchase); // plays SFX
             PointManager.points -= abCost; // Remove Cost from Points
             PointManager.instance.UpdatePointsUI();
             Gun.instance.MaxAmmo(); // Run MaxAmmo function - found in the Gun Script

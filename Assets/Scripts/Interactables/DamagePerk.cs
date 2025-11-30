@@ -4,7 +4,7 @@ public class DamagePerk : Interactable
 { // SS - Damage Perk Script -  Makes use of interactable base - Manages the Damage Perk Interactable
 
     // Variables
-
+    public GameObject screen;
     [SerializeField] private Material activeMaterial;
     private MeshRenderer meshRenderer;
 
@@ -14,7 +14,8 @@ public class DamagePerk : Interactable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       meshRenderer = GetComponent<MeshRenderer>();
+        screen.SetActive(false);
+        meshRenderer = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -22,7 +23,8 @@ public class DamagePerk : Interactable
     {
         if(PowerManager.instance.powerOn == true) // IF Power is enabled THEN...
         {
-            meshRenderer.material = activeMaterial; // Change object material
+            screen.SetActive(true);
+            //meshRenderer.material = activeMaterial; // Change object material
             promptMessage = ("Buy Damage Perk? (3000P)"); // Change interaction prompt
         }
     }

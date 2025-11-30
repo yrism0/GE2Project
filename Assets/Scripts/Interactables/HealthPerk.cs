@@ -4,7 +4,8 @@ public class HealthPerk : Interactable
 { // SS - Health Perk Script -  Makes use of interactable base - Manages health perk
 
     // Variables
-
+    public GameObject screen;
+    
     [SerializeField] private Material activeMaterial;
     private MeshRenderer meshRenderer;
 
@@ -14,6 +15,7 @@ public class HealthPerk : Interactable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        screen.SetActive(false);
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
@@ -22,9 +24,12 @@ public class HealthPerk : Interactable
     {
         if (PowerManager.instance.powerOn == true) // IF Power is enabled THEN...
         {
-            meshRenderer.material = activeMaterial; // Change object material
+            screen.SetActive(true);
+            // meshRenderer.material = activeMaterial; // Change object material
             promptMessage = ("Buy Health Perk? (3000P)"); // Change prompt text
         }
+        
+
     }
 
     protected override void Interact()

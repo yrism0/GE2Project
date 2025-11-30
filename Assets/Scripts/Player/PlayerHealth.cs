@@ -32,6 +32,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         health = Mathf.Clamp(health, 0, maxHealth); // Clamps health so that its values MUST stay between 0 and the MaxHealth value
         UpdateHealthUI();
         
@@ -95,7 +96,7 @@ public class PlayerHealth : MonoBehaviour
             maxHealth = 150f;
             healDelay = 4f;
             healthBar.maxValue = 150; // Increases max value of slider to show increased health
-            
+           
         }
     }
 }

@@ -4,7 +4,7 @@ public class PowerManager : Interactable
 { // SS - Power Manager Script - Manages the power state for the level
 
     // Variables
-    
+    public Animator lever;
     public static PowerManager instance;
     public bool powerOn = false;
 
@@ -29,6 +29,8 @@ public class PowerManager : Interactable
     {
         if (powerOn == false)
         {
+            lever.Play("pull the lever kronk");
+            
             powerOn = true;
             promptMessage = ("...");
         }

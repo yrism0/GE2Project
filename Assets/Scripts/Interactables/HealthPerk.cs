@@ -1,5 +1,8 @@
 using UnityEngine;
 
+
+
+
 public class HealthPerk : Interactable
 { // SS - Health Perk Script -  Makes use of interactable base - Manages health perk
 
@@ -11,7 +14,13 @@ public class HealthPerk : Interactable
 
     [SerializeField] private int hPerkCost;
     private bool hPerkBought = false;
+    AudioManager audioManager;
 
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +48,7 @@ public class HealthPerk : Interactable
             if (PointManager.points >= hPerkCost && hPerkBought == false)
             {
                 hPerkBought = true;
+                audioManager.PlaySFX(audioManager.ammoPurchase); // plays SFX
                 PointManager.points -= hPerkCost;
                 PointManager.instance.UpdatePointsUI();
                 promptMessage = ("Already Purchased");

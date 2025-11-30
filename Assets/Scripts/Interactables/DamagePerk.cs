@@ -10,7 +10,13 @@ public class DamagePerk : Interactable
 
     [SerializeField] private int dPerkCost;
     private bool dPerkBought = false;
+    AudioManager audioManager;
 
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,6 +42,7 @@ public class DamagePerk : Interactable
             if (PointManager.points >= dPerkCost && dPerkBought == false) // Player can buy perk if they have enough points
             {
                 dPerkBought = true;
+                audioManager.PlaySFX(audioManager.ammoPurchase); // plays SFX
                 PointManager.points -= dPerkCost;
                 PointManager.instance.UpdatePointsUI();
                 promptMessage = ("Already Purchased"); // Change prompt once bought

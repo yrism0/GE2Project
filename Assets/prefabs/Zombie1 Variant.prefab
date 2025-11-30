@@ -443,6 +443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   playerhealth: {fileID: 2432499347331993826, guid: 55ed9e23edec082418bd1cccbfd32247, type: 3}
+  delay: 0
 --- !u!114 &2232137085433624831
 MonoBehaviour:
   m_ObjectHideFlags: 0

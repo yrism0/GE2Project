@@ -17,6 +17,7 @@ TagManager:
   - spR0
   - spR1
   - Audio
+  - roof
   layers:
   - Default
   - TransparentFX
@@ -29,8 +30,8 @@ TagManager:
   - doors
   - Interactable
   - Terrain
-  - 
-  - 
+  - roof
+  - canvas markers
   - 
   - 
   - 

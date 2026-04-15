@@ -1424,13 +1424,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'In ''Infestation'' you must fend off waves of zombies, accumulating points
-    and exploring the level.
+  m_Text: 'In ''Infestation'' you must find the power to activate the perks.
 
-    Don''t forget to buy ammo and perks!
+    be
+    careful ammo is limited... unless you find an ammo box.
 
-    How long
-    can you hold out?'
+    How long can you
+    hold out?'
 --- !u!222 &426177780
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1674,7 +1674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &479704696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3085,7 +3085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1010951276
 RectTransform:
   m_ObjectHideFlags: 0

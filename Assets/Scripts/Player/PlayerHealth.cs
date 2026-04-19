@@ -93,9 +93,9 @@ public class PlayerHealth : MonoBehaviour
         if (healthPerk == false && PowerManager.instance.powerOn == true & PointManager.points >= hPerkCost)
         {
             healthPerk = true;
-            maxHealth = 150f;
-            healDelay = 4f;
-            healthBar.maxValue = 150; // Increases max value of slider to show increased health
+            maxHealth = 125f;
+            healDelay = 5f;
+            healthBar.maxValue = 125; // Increases max value of slider to show increased health
            
         }
     }
